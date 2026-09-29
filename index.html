@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aiswarya Anil | BCA Student & Tech Enthusiast</title>
+
+    <meta name="description"
+          content="Portfolio of Aiswarya Anil — First Year BCA student at Rajagiri College of Social Sciences, Kalamassery.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #070b14;
+            --bg-light: #0d1424;
+            --card: rgba(18, 27, 45, 0.65);
+            --border: rgba(255,255,255,0.09);
+
+            --text: #f5f7ff;
+            --muted: #9ba7bd;
+
+            --primary: #7c5cff;
+            --secondary: #00d9ff;
+            --pink: #ff4ecd;
+
+            --gradient: linear-gradient(
+                135deg,
+                #7c5cff,
+                #00d9ff,
+                #ff4ecd
+            );
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* =====================================================
+           BACKGROUND EFFECTS
+        ===================================================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #6d4aff;
+            filter: blur(180px);
+            opacity: 0.12;
+            top: -200px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00d9ff;
+            filter: blur(200px);
+            opacity: 0.08;
+            bottom: -200px;
+            right: -150px;
+            z-index: -1;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7,11,20,0.75);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+
+            border: 1px solid rgba(124,92,255,0.35);
+            background: rgba(124,92,255,0.08);
+
+            border-radius: 30px;
+
+            color: #bcb0ff;
+            font-size: 0.8rem;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            line-height: 0.98;
+            letter-spacing: -4px;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            margin-top: 25px;
+            max-width: 650px;
+
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 10px;
+
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* =====================================================
+           PROFILE CARD
+        ===================================================== */
+
+        .profile-card {
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124,92,255,0.14),
+                    rgba(0,217,255,0.05)
+                );
+
+            border: 1px solid var(--border);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.25);
+
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+
+            margin: auto auto 25px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: "Space Grotesk";
+            font-size: 3rem;
+            font-weight: 700;
+
+            background: var(--gradient);
+
+            box-shadow:
+                0 0 50px rgba(124,92,255,0.25);
+        }
+
+        .profile-card h3 {
+            text-align: center;
+            font-family: "Space Grotesk";
+            font-size: 1.5rem;
+        }
+
+        .profile-card p {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .status {
+            margin-top: 25px;
+            padding: 12px;
+
+            border-radius: 12px;
+
+            background: rgba(0,255,170,0.05);
+            border: 1px solid rgba(0,255,170,0.12);
+
+            color: #73ffc9;
+
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* =====================================================
+           SECTION HEADINGS
+        ===================================================== */
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            margin-top: 10px;
+
+            font-family: "Space Grotesk";
+            font-size: clamp(2rem, 4vw, 3.2rem);
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 650px;
+            margin-top: 12px;
+        }
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .glass-card {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            background: var(--card);
+
+            border-radius: 18px;
+
+            backdrop-filter: blur(15px);
+
+            transition: 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124,92,255,0.35);
+        }
+
+        .glass-card h3 {
+            font-family: "Space Grotesk";
+            margin-bottom: 12px;
+        }
+
+        .glass-card p {
+            color: var(--muted);
+        }
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+
+            left: 10px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: linear-gradient(
+                var(--primary),
+                var(--secondary)
+            );
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 3px;
+            top: 7px;
+
+            width: 16px;
+            height: 16px;
+
+            border-radius: 50%;
+
+            background: var(--secondary);
+
+            box-shadow:
+                0 0 20px var(--secondary);
+        }
+
+        .timeline-item h3 {
+            font-family: "Space Grotesk";
+        }
+
+        .timeline-item .date {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* =====================================================
+           INTERESTS
+        ===================================================== */
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .interest-card {
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            transition: 0.35s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,217,255,0.3);
+        }
+
+        .interest-icon {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .interest-card h3 {
+            font-family: "Space Grotesk";
+            margin-bottom: 8px;
+        }
+
+        .interest-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.03);
+
+            color: #cdd6e8;
+
+            font-size: 0.85rem;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: rgba(124,92,255,0.15);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* =====================================================
+           GOALS
+        ===================================================== */
+
+        .goal-box {
+            padding: 50px;
+
+            border-radius: 25px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0,217,255,0.12),
+                    transparent 35%
+                ),
+                rgba(255,255,255,0.03);
+
+            border: 1px solid var(--border);
+        }
+
+        .goal-box h3 {
+            font-family: "Space Grotesk";
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .goal-box p {
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            min-height: 220px;
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            transition: 0.35s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124,92,255,0.4);
+        }
+
+        .project-card h3 {
+            font-family: "Space Grotesk";
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(124,92,255,0.12);
+
+            color: #bdb0ff;
+
+            font-size: 0.75rem;
+        }
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: "Space Grotesk";
+            font-size: clamp(2rem,5vw,4rem);
+        }
+
+        .contact p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 15px auto 30px;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 30px 0;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 0.85rem;
+
+            text-align: center;
+        }
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .profile-card {
+                max-width: 450px;
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .goal-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                Aiswarya<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section id="home">
+
+        <div class="container hero">
+
+            <div>
+
+                <span class="eyebrow">
+                    ✦ BCA Student • Technology Enthusiast
+                </span>
+
+                <h1>
+                    Hi, I'm
+                    <span class="gradient-text">
+                        Aiswarya.
+                    </span>
+                    <br>
+                    I love building
+                    <span class="gradient-text">
+                        possibilities.
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    A first-year Bachelor of Computer Applications student
+                    at Rajagiri College of Social Sciences, Kalamassery,
+                    exploring technology, logic, creativity and the endless
+                    possibilities of the digital world.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#about"
+                       class="btn btn-primary">
+                        Explore My Journey →
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-secondary">
+                        Let's Connect
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="avatar">
+                    AA
+                </div>
+
+                <h3>
+                    Aiswarya Anil
+                </h3>
+
+                <p>
+                    BCA • 2026–2030
+                </p>
+
+                <p>
+                    Rajagiri College of Social Sciences
+                </p>
+
+                <div class="status">
+                    ● Currently learning, exploring & building
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section id="about">
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>01 — About Me</span>
+
+                <h2>
+                    More than just a student.
+                </h2>
+
+                <p>
+                    I'm at the beginning of my journey in computer
+                    applications, but I'm curious about where technology
+                    can take me.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="glass-card">
+
+                    <h3>
+                        👩‍💻 Who I Am
+                    </h3>
+
+                    <p>
+                        I'm Aiswarya Anil, a first-year BCA student from
+                        Kollam, Kerala. I enjoy understanding how things
+                        work, breaking problems into smaller pieces and
+                        finding logical ways to solve them.
+                    </p>
+
+                </div>
+
+
+                <div class="glass-card">
+
+                    <h3>
+                        🧠 How I Think
+                    </h3>
+
+                    <p>
+                        Logic and puzzles naturally attract me. I enjoy
+                        challenges that make me stop, think, experiment
+                        and approach a problem from a different angle.
+                    </p>
+
+                </div>
+
+
+                <div class="glass-card">
+
+                    <h3>
+                        💻 What Interests Me
+                    </h3>
+
+                    <p>
+                        Technology, software, programming and the constant
+                        development of the tech industry fascinate me.
+                        I'm interested in learning how modern technologies
+                        are created and how they can solve real problems.
+                    </p>
+
+                </div>
+
+
+                <div class="glass-card">
+
+                    <h3>
+                        🌱 Where I'm Going
+                    </h3>
+
+                    <p>
+                        I'm building my foundation step by step with the
+                        goal of becoming a capable technology professional,
+                        gaining meaningful experience and eventually
+                        contributing to impactful projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+    ===================================================== -->
+
+    <section id="education">
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>02 — Education</span>
+
+                <h2>
+                    My academic journey.
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <h3>
+                        Bachelor of Computer Applications
+                    </h3>
+
+                    <div class="date">
+                        2026 — 2030
+                    </div>
+
+                    <p>
+                        Rajagiri College of Social Sciences,
+                        Kalamassery, Kerala.
+                    </p>
+
+                    <p>
+                        Currently pursuing my first year and building
+                        a strong foundation in computer applications,
+                        programming and technology.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <h3>
+                        Hometown
+                    </h3>
+
+                    <div class="date">
+                        Kollam, Kerala
+                    </div>
+
+                    <p>
+                        A place that shaped my curiosity, personality
+                        and perspective.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTERESTS
+    ===================================================== -->
+
+    <section id="interests">
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>03 — Interests</span>
+
+                <h2>
+                    Things that keep me curious.
+                </h2>
+
+                <p>
+                    Technology isn't the only thing that interests me.
+                    I enjoy the quieter things too.
+                </p>
+
+            </div>
+
+
+            <div class="interest-grid">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <p>
+                        Exploring software, programming, emerging
+                        technologies and the evolution of the tech world.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        Logic & Puzzles
+                    </h3>
+
+                    <p>
+                        I enjoy puzzles and logical challenges that
+                        encourage creative and structured thinking.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🎧
+                    </div>
+
+                    <h3>
+                        Music
+                    </h3>
+
+                    <p>
+                        Music is one of my favourite ways to relax,
+                        recharge and spend time with myself.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Reading
+                    </h3>
+
+                    <p>
+                        Reading gives me a chance to explore different
+                        ideas, perspectives and worlds.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🌙
+                    </div>
+
+                    <h3>
+                        Quiet Time
+                    </h3>
+
+                    <p>
+                        I value spending time alone. It gives me space
+                        to think, reflect and recharge.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Future Tech
+                    </h3>
+
+                    <p>
+                        I'm curious about where technology is heading
+                        and how the next generation of digital tools
+                        will change the world.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>04 — Skills I'm Building</span>
+
+                <h2>
+                    Learning mode: ON.
+                </h2>
+
+                <p>
+                    I'm still at the beginning of my journey, so these
+                    are skills I'm developing rather than claiming
+                    mastery over.
+                </p>
+
+            </div>
+
+
+            <div class="skills">
+
+                <span class="skill">Python</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Logical Thinking</span>
+                <span class="skill">Programming Fundamentals</span>
+                <span class="skill">Communication</span>
+                <span class="skill">Creative Thinking</span>
+                <span class="skill">Continuous Learning</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section id="projects">
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>05 — Projects</span>
+
+                <h2>
+                    The beginning of something bigger.
+                </h2>
+
+                <p>
+                    Every developer starts somewhere. This section will
+                    grow as I build more projects during my BCA journey.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <h3>
+                        Portfolio Website
+                    </h3>
+
+                    <p>
+                        A personal portfolio created to introduce myself,
+                        showcase my interests and document my journey
+                        into technology.
+                    </p>
+
+                    <span class="project-tag">
+                        HTML • CSS • JavaScript
+                    </span>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>
+                        More Coming Soon...
+                    </h3>
+
+                    <p>
+                        As I learn programming and explore new technologies,
+                        this space will become a collection of projects,
+                        experiments and ideas.
+                    </p>
+
+                    <span class="project-tag">
+                        In Progress
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CAREER GOALS
+    ===================================================== -->
+
+    <section>
+
+        <div class="container reveal">
+
+            <div class="section-title">
+
+                <span>06 — Future</span>
+
+                <h2>
+                    Where I want to go.
+                </h2>
+
+            </div>
+
+
+            <div class="goal-box">
+
+                <h3>
+                    Build. Learn. Grow. Repeat.
+                </h3>
+
+                <p>
+                    My goal is to build a meaningful career in the
+                    technology industry. I want to work in an environment
+                    where learning is encouraged, ideas are valued and
+                    good work is recognized fairly.
+
+                    <br><br>
+
+                    Over time, I hope to work with reputed technology
+                    companies, contribute to real-world projects,
+                    develop strong technical skills and build a career
+                    that combines curiosity, creativity and problem solving.
+
+                    <br><br>
+
+                    For now, I'm focused on something simple:
+                    <strong>learning as much as I can.</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section id="contact">
+
+        <div class="container contact reveal">
+
+            <div class="section-title">
+
+                <span>07 — Contact</span>
+
+            </div>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                Whether it's technology, programming, ideas, projects
+                or just an interesting conversation — I'm always open
+                to learning something new.
+            </p>
+
+            <div class="hero-buttons"
+                 style="justify-content:center;">
+
+                <!-- Replace the email address with your real email -->
+
+                <a href="mailto:your.email@example.com"
+                   class="btn btn-primary">
+                    ✉ Email Me
+                </a>
+
+                <!-- Replace with your actual LinkedIn -->
+
+                <a href="#"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+                <!-- Replace with your actual GitHub -->
+
+                <a href="#"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Aiswarya Anil · Built with curiosity & code.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* Scroll reveal animation */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealOnScroll = () => {
+
+            revealElements.forEach(element => {
+
+                const windowHeight =
+                    window.innerHeight;
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        };
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+        revealOnScroll();
+
+
+        /* Small mouse movement effect */
+
+        const profileCard =
+            document.querySelector(".profile-card");
+
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+
+                if (window.innerWidth < 800) return;
+
+                const x =
+                    (window.innerWidth / 2 - event.clientX)
+                    / 80;
+
+                const y =
+                    (window.innerHeight / 2 - event.clientY)
+                    / 80;
+
+                profileCard.style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
